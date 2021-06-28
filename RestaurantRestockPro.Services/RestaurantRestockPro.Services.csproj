@@ -55,10 +55,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RestaurantService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RestaurantRestockPro.Data\RestaurantRestockPro.Data.csproj">
+      <Project>{11e92df5-91a6-44b3-96a6-10c4163907b4}</Project>
+      <Name>RestaurantRestockPro.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RestaurantRestockPro.Models\RestaurantRestockPro.Models.csproj">
+      <Project>{55db3c5a-5bc3-4b2c-ab24-a52bb7c8c2e0}</Project>
+      <Name>RestaurantRestockPro.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
