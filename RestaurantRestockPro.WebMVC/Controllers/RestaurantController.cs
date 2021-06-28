@@ -54,13 +54,6 @@ namespace RestaurantRestockPro.WebMVC.Controllers
             return View(model);
         }
 
-        private RestaurantService CreateRestaurantService()
-        {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new RestaurantService(userId);
-            return service;
-        }
-
         public ActionResult Edit(int id)
         {
             var service = CreateRestaurantService();
@@ -81,7 +74,7 @@ namespace RestaurantRestockPro.WebMVC.Controllers
         {
             if (!ModelState.IsValid) return View(model);
 
-            if(model.RestaurantId != id)
+            if (model.RestaurantId != id)
             {
                 ModelState.AddModelError("", "Id Mismatch");
                 return View(model);
@@ -97,6 +90,33 @@ namespace RestaurantRestockPro.WebMVC.Controllers
 
             ModelState.AddModelError("", "Restaurant could not be updated.");
             return View(model);
+        }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateRestaurantService();
+            var model = svc.GetRestaurantById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateRestaurantService();
+            service.DeleteRestaurant(id);
+            TempData["SaveResult"] = "The restaurant was deleted.";
+            return RedirectToAction("Index");
+        }
+
+        private RestaurantService CreateRestaurantService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new RestaurantService(userId);
+            return service;
         }
     }
 }
