@@ -1,4 +1,6 @@
-﻿using RestaurantRestockPro.Models.Restaurant;
+﻿using Microsoft.AspNet.Identity;
+using RestaurantRestockPro.Models.Restaurant;
+using RestaurantRestockPro.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +15,10 @@ namespace RestaurantRestockPro.WebMVC.Controllers
         // GET: Restaurant
         public ActionResult Index()
         {
-            var model = new RestaurantListItem[0];
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new RestaurantService(userId);
+            var model = service.GetRestaurants();
+            
             return View(model);
         }
 
@@ -27,11 +32,25 @@ namespace RestaurantRestockPro.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(RestaurantCreate model)
         {
-            if (ModelState.IsValid)
-            {
+            if (!ModelState.IsValid) return View(model);
 
+            var service = CreateRestaurantService();
+
+            if (service.CreateRestaurant(model))
+            {
+                TempData["SaveResult"] = "A restaurant was Created.";
+                return RedirectToAction("Index");
             }
-            return View(model);
+
+            ModelState.AddModelError("", "Restaurant could not be created.");
+            return View("Model");
+        }
+
+        private RestaurantService CreateRestaurantService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new RestaurantService(userId);
+            return service;
         }
     }
 }
