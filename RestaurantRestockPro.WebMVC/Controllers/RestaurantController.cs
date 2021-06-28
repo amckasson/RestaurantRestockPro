@@ -46,6 +46,14 @@ namespace RestaurantRestockPro.WebMVC.Controllers
             return View("Model");
         }
 
+        public ActionResult Details(int id)
+        {
+            var svc = CreateRestaurantService();
+            var model = svc.GetRestaurantById(id);
+
+            return View(model);
+        }
+
         private RestaurantService CreateRestaurantService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

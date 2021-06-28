@@ -52,5 +52,23 @@ namespace RestaurantRestockPro.Services
                 return query.ToArray();
             }
         }
+
+        public RestaurantDetail GetRestaurantById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Restaurants
+                        .Single(e => e.RestaurantId == id && e.OwnerId == _userId);
+                return
+                    new RestaurantDetail
+                    {
+                        RestaurantId = entity.RestaurantId,
+                        RestaurantName = entity.RestaurantName,
+                        RestaurantLocation = entity.RestaurantLocation
+                    };
+            }
+        }
     }
 }
