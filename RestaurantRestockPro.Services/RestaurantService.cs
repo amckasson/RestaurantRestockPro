@@ -70,5 +70,21 @@ namespace RestaurantRestockPro.Services
                     };
             }
         }
+
+        public bool UpdateRestaurant(RestaurantEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Restaurants
+                        .Single(e => e.RestaurantId == model.RestaurantId && e.OwnerId == _userId);
+
+                entity.RestaurantName = model.RestaurantName;
+                entity.RestaurantLocation = model.RestaurantLocation;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
