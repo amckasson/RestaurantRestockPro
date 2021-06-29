@@ -33,7 +33,7 @@ namespace RestaurantRestockPro.Data
         }
 
         public DbSet<Restaurant> Restaurants { get; set; }
-        //public DbSet<StockOrder> StockOrders { get; set; }
+        public DbSet<StockOrder> StockOrders { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
