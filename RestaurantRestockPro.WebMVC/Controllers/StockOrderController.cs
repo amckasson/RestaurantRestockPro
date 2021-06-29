@@ -1,4 +1,6 @@
-﻿using RestaurantRestockPro.Models.StockOrder;
+﻿using Microsoft.AspNet.Identity;
+using RestaurantRestockPro.Models.StockOrder;
+using RestaurantRestockPro.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +15,9 @@ namespace RestaurantRestockPro.WebMVC.Controllers
         // GET: StockOrder
         public ActionResult Index()
         {
-            var model = new StockOrderListItem[0];
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new StockOrderService(userId);
+            var model = service.GetStockOrders();
             return View(model);
         }
 
@@ -26,11 +30,16 @@ namespace RestaurantRestockPro.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(StockOrderCreate model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-
+                return View(model);
             }
-            return View(model);
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new StockOrderService(userId);
+
+            service.CreateStockOrder(model);
+
+            return RedirectToAction("Index");
         }
     }
 }
