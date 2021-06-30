@@ -68,5 +68,21 @@ namespace RestaurantRestockPro.Services
                     };
             }
         }
+
+        public bool UpdateStockOrder(StockOrderEdit model)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .StockOrders
+                        .Single(e => e.StockOrderId == model.StockOrderId);
+
+                entity.Manager = model.Manager;
+                entity.OrderUpdated = DateTimeOffset.UtcNow;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
