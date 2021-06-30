@@ -48,5 +48,25 @@ namespace RestaurantRestockPro.Services
                 return query.ToList();
             }
         }
+
+        public StockOrderDetail GetStockOrderById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .StockOrders
+                        .Single(e => e.StockOrderId == id);
+
+                return
+                    new StockOrderDetail()
+                    {
+                        StockOrderId = entity.StockOrderId,
+                        Manager = entity.Manager,
+                        OrderCreated = entity.OrderCreated,
+                        OrderUpdated = entity.OrderUpdated
+                    };
+            }
+        }
     }
 }
