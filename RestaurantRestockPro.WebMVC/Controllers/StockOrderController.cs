@@ -50,13 +50,6 @@ namespace RestaurantRestockPro.WebMVC.Controllers
             return View(model);
         }
 
-        private StockOrderService CreateStockOrderService()
-        {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new StockOrderService(userId);
-            return service;
-        }
-
         public ActionResult Edit(int id)
         {
             var service = CreateStockOrderService();
@@ -68,6 +61,33 @@ namespace RestaurantRestockPro.WebMVC.Controllers
                     Manager = detail.Manager
                 };
             return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, StockOrderEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+            if(model.StockOrderId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+            var service = CreateStockOrderService();
+            if (service.UpdateStockOrder(model))
+            {
+                TempData["SaveResult"] = "Your Stock Order was updated.";
+                return RedirectToAction("Index");
+            }
+            ModelState.AddModelError("", "Your stock order could not be updated.");
+            return View(model);
+        }
+
+        private StockOrderService CreateStockOrderService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new StockOrderService(userId);
+            return service;
         }
     }
 }

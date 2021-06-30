@@ -244,6 +244,7 @@
     <Content Include="Views\StockOrder\Index.cshtml" />
     <Content Include="Views\StockOrder\Create.cshtml" />
     <Content Include="Views\StockOrder\Details.cshtml" />
+    <Content Include="Views\StockOrder\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
