@@ -66,6 +66,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Restaurant.cs" />
+    <Compile Include="StockItem.cs" />
     <Compile Include="StockOrder.cs" />
   </ItemGroup>
   <ItemGroup>
