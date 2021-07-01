@@ -59,6 +59,7 @@
     <Compile Include="Restaurant\RestaurantDetail.cs" />
     <Compile Include="Restaurant\RestaurantEdit.cs" />
     <Compile Include="Restaurant\RestaurantListItem.cs" />
+    <Compile Include="StockItem\StockItemCreate.cs" />
     <Compile Include="StockItem\StockItemListItem.cs" />
     <Compile Include="StockOrder\StockOrderCreate.cs" />
     <Compile Include="StockOrder\StockOrderDetail.cs" />

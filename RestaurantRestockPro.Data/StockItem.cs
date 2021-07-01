@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace RestaurantRestockPro.Data
 {
-    public enum ItemType { Produce, Meat, Drygood, Other}
     public class StockItem
     {
         [Key]
@@ -23,6 +22,6 @@ namespace RestaurantRestockPro.Data
         public bool IsFood { get; set; }
 
         [Required]
-        public ItemType ItemType { get; set; }
+        public int ItemType { get; set; }
     }
 }

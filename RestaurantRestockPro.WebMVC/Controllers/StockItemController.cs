@@ -14,6 +14,12 @@ namespace RestaurantRestockPro.WebMVC.Controllers
         public ActionResult Index()
         {
             var model = new StockItemListItem[0];
+            return View(model);
+        }
+
+        //GET
+        public ActionResult Create()
+        {
             return View();
         }
     }
