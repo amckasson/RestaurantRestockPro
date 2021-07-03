@@ -92,6 +92,25 @@ namespace RestaurantRestockPro.WebMVC.Controllers
             return View(model);
         }
 
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateStockItemService();
+            var model = svc.GetStockItemById(id);
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateStockItemService();
+            service.DeleteStockItem(id);
+            TempData["SaveResult"] = "The stock item was deleted.";
+            return RedirectToAction("Index");
+        }
+
         private StockItemService CreateStockItemService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

@@ -87,5 +87,19 @@ namespace RestaurantRestockPro.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public bool DeleteStockItem(int stockItemId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .StockItems
+                        .Single(e => e.StockItemId == stockItemId);
+
+                ctx.StockItems.Remove(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

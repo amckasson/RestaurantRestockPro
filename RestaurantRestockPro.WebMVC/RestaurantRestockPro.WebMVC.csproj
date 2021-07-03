@@ -251,6 +251,7 @@
     <Content Include="Views\StockItem\Create.cshtml" />
     <Content Include="Views\StockItem\Details.cshtml" />
     <Content Include="Views\StockItem\Edit.cshtml" />
+    <Content Include="Views\StockItem\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
