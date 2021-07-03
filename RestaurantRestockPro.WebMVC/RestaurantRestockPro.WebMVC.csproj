@@ -249,6 +249,7 @@
     <Content Include="Views\StockOrder\Delete.cshtml" />
     <Content Include="Views\StockItem\Index.cshtml" />
     <Content Include="Views\StockItem\Create.cshtml" />
+    <Content Include="Views\StockItem\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
