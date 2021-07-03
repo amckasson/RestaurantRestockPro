@@ -49,5 +49,57 @@ namespace RestaurantRestockPro.Services
                 return query.ToList();
             }
         }
+
+        public StockItemDetail GetStockItemById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .StockItems
+                        .Single(e => e.StockItemId == id);
+
+                return
+                    new StockItemDetail()
+                    {
+                        StockItemId = entity.StockItemId,
+                        Name = entity.Name,
+                        Price = entity.Price,
+                        IsFood = entity.IsFood,
+                        ItemType = entity.ItemType
+                    };
+            }
+        }
+
+        public bool UpdateStockItem(StockItemEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .StockItems
+                        .Single(e => e.StockItemId == model.StockItemId);
+
+                entity.Name = model.Name;
+                entity.Price = model.Price;
+                entity.IsFood = model.IsFood;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteStockItem(int stockItemId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .StockItems
+                        .Single(e => e.StockItemId == stockItemId);
+
+                ctx.StockItems.Remove(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
