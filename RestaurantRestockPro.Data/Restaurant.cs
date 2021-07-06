@@ -22,5 +22,8 @@ namespace RestaurantRestockPro.Data
         [Required]
         [Display(Name = "Restaurants Location")]
         public string RestaurantLocation { get; set; }
+
+        public int StockOrderId { get; set; }
+        public virtual List<StockOrder> StockOrder { get; set; }
     }
 }
