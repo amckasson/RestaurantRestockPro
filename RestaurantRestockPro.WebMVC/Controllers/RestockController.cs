@@ -30,17 +30,26 @@ namespace RestaurantRestockPro.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(RestockCreate model)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid) return View(model);
+            
+            var service = CreateRestockService();
+
+            if (service.CreateRestock(model))
             {
-                return View(model);
+                TempData["SaveResult"] = "Restock was created.";
+                return RedirectToAction("Index");
             }
 
+            ModelState.AddModelError("", "Restock could not be created.");
+
+            return View(model);
+        }
+
+        private RestockService CreateRestockService()
+        {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new RestockService(userId);
-
-            service.CreateRestock(model);
-
-            return RedirectToAction("Index");
+            return service;
         }
     }
 }
