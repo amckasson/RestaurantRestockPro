@@ -23,5 +23,7 @@ namespace RestaurantRestockPro.Data
 
         [Required]
         public int ItemType { get; set; }
+
+        public virtual List<Restock> Restocks { get; set; } = new List<Restock>();
     }
 }

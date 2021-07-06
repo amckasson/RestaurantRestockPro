@@ -21,5 +21,7 @@ namespace RestaurantRestockPro.Data
         public DateTimeOffset OrderUpdated { get; set; }
 
         public decimal TotalCost { get; set; }
+
+        public virtual List<Restock> Restocks { get; set; } = new List<Restock>();
     }
 }
