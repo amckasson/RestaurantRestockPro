@@ -67,6 +67,28 @@ namespace RestaurantRestockPro.WebMVC.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, RestockDetail model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if(model.RestockId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+            var service = CreateRestockService();
+
+            if (service.UpdateRestock(model))
+            {
+                TempData["SaveResult"] = "Restock was updated.";
+                return RedirectToAction("Index");
+            }
+            ModelState.AddModelError("", "Restock could not be updated.");
+            return View(model);
+        }
+
         private RestockService CreateRestockService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
