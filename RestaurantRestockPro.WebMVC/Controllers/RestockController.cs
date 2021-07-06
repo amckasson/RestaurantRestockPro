@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using RestaurantRestockPro.Services;
+using Microsoft.AspNet.Identity;
 
 namespace RestaurantRestockPro.WebMVC.Controllers
 {
@@ -13,7 +15,9 @@ namespace RestaurantRestockPro.WebMVC.Controllers
         // GET: Restock
         public ActionResult Index()
         {
-            var model = new RestockListItem[0];
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new RestockService(userId);
+            var model = service.GetRestock();
             return View(model);
         }
 
@@ -26,11 +30,17 @@ namespace RestaurantRestockPro.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(RestockCreate model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-
+                return View(model);
             }
-            return View(model);
+
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new RestockService(userId);
+
+            service.CreateRestock(model);
+
+            return RedirectToAction("Index");
         }
     }
 }
