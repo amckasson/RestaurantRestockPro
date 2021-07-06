@@ -257,6 +257,7 @@
     <Content Include="Views\Restock\Create.cshtml" />
     <Content Include="Views\Restock\Details.cshtml" />
     <Content Include="Views\Restock\Edit.cshtml" />
+    <Content Include="Views\Restock\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
