@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RestaurantRestockPro.Models.Restock
 {
-    class RestockListItem
+    public class RestockListItem
     {
         public int RestockId { get; set; }
         public int StockOrderId { get; set; }
