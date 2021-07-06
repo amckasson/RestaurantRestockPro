@@ -62,5 +62,32 @@ namespace RestaurantRestockPro.Services
                     ).ToArray();
             }
         }
+
+        public RestockDetail GetRestockById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx
+                    .Restocks.Single(e => e.RestockId == id);
+                return new RestockDetail
+                {
+                    RestockId = entity.RestockId,
+                    Quantity = entity.Quantity,
+                    StockItemId = entity.StockItemId,
+                    StockItem = new StockItemListItem
+                    {
+                        StockItemId = entity.StockItem.StockItemId,
+                        Name = entity.StockItem.Name,
+                    },
+                    StockOrderId = entity.StockOrderId,
+                    StockOrder = new Models.StockOrder.StockOrderListItem
+                    {
+                        StockOrderId = entity.StockOrder.StockOrderId,
+                        Manager = entity.StockOrder.Manager
+                    }
+                };
+            }
+        }
+
     }
 }
