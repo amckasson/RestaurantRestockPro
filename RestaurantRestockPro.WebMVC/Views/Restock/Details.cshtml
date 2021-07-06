@@ -1,0 +1,50 @@
+﻿@model RestaurantRestockPro.Models.Restock.RestockDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RestockDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RestockId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RestockId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StockItemId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StockItemId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StockOrderId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StockOrderId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RestockId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
