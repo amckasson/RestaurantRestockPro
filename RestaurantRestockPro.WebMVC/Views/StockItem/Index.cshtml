@@ -28,6 +28,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemType)
+        </th>
         <th></th>
     </tr>
 
@@ -38,6 +41,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItemType)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new {  id=item.StockItemId}) |

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ namespace RestaurantRestockPro.Models.StockItem
 
         public bool IsFood { get; set; }
 
+        [Required]
         public ItemType ItemType { get; set; }
     }
 }

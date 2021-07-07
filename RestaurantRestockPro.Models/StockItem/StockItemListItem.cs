@@ -11,5 +11,7 @@ namespace RestaurantRestockPro.Models.StockItem
         public int StockItemId { get; set; }
 
         public string Name { get; set; }
+
+        public ItemType ItemType { get; set; }
     }
 }

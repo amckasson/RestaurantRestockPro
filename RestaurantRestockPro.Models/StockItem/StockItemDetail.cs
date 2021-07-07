@@ -16,6 +16,6 @@ namespace RestaurantRestockPro.Models.StockItem
 
         public bool IsFood { get; set; }
 
-        public int ItemType { get; set; }
+        public ItemType ItemType { get; set; }
     }
 }
