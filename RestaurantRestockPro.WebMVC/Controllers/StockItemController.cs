@@ -62,6 +62,7 @@ namespace RestaurantRestockPro.WebMVC.Controllers
                 {
                     StockItemId = detail.StockItemId,
                     Name = detail.Name,
+                    ItemType = detail.ItemType,
                     Price = detail.Price,
                     IsFood = detail.IsFood
                 };

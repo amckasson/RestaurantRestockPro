@@ -25,7 +25,7 @@ namespace RestaurantRestockPro.Services
                     Name = model.Name,
                     Price = model.Price,
                     IsFood = model.IsFood,
-                    //ItemType = model.ItemType
+                    ItemType = (int)model.ItemType
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -45,6 +45,7 @@ namespace RestaurantRestockPro.Services
                         {
                             StockItemId = e.StockItemId,
                             Name = e.Name,
+                            ItemType = (ItemType)e.ItemType,
                         });
                 return query.ToList();
             }
@@ -66,7 +67,7 @@ namespace RestaurantRestockPro.Services
                         Name = entity.Name,
                         Price = entity.Price,
                         IsFood = entity.IsFood,
-                        ItemType = entity.ItemType
+                        ItemType = (ItemType)entity.ItemType
                     };
             }
         }
@@ -83,6 +84,7 @@ namespace RestaurantRestockPro.Services
                 entity.Name = model.Name;
                 entity.Price = model.Price;
                 entity.IsFood = model.IsFood;
+                entity.ItemType = (int)model.ItemType;
 
                 return ctx.SaveChanges() == 1;
             }
