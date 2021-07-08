@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RestaurantRestockPro.Models.StockItem
+namespace RestaurantRestockPro.Models.StockItemModels
 {
     public class StockItemDetail
     {
@@ -17,5 +17,7 @@ namespace RestaurantRestockPro.Models.StockItem
         public bool IsFood { get; set; }
 
         public ItemType ItemType { get; set; }
+
     }
 }
+

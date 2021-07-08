@@ -5,14 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RestaurantRestockPro.Models.Restaurant
+namespace RestaurantRestockPro.Models.RestaurantModels
 {
-    public class RestaurantListItem
+    public class RestaurantDetail
     {
         public int RestaurantId { get; set; }
 
-        [Required]
         [Display(Name = "Restaurants Name")]
         public string RestaurantName { get; set; }
+
+        [Display(Name = "Restaurants Location")]
+        public string RestaurantLocation { get; set; }
     }
 }

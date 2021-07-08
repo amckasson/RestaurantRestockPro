@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RestaurantRestockPro.Models.StockItem
+namespace RestaurantRestockPro.Models.StockItemModels
 {
     public enum ItemType { Produce, Meat, Drygood, Other }
     public class StockItemCreate
@@ -18,5 +18,7 @@ namespace RestaurantRestockPro.Models.StockItem
 
         [Required]
         public ItemType ItemType { get; set; }
+
     }
 }
+

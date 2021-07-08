@@ -1,12 +1,12 @@
-﻿using RestaurantRestockPro.Models.StockItem;
-using RestaurantRestockPro.Models.StockOrder;
+﻿using RestaurantRestockPro.Models.StockItemModels;
+using RestaurantRestockPro.Models.StockOrderModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RestaurantRestockPro.Models.Restock
+namespace RestaurantRestockPro.Models.RestockModels
 {
     public class RestockDetail
     {

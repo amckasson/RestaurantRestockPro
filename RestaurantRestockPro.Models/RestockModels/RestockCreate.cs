@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RestaurantRestockPro.Models.Restock
+namespace RestaurantRestockPro.Models.RestockModels
 {
     public class RestockCreate
     {

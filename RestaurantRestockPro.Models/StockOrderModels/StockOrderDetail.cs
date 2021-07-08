@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RestaurantRestockPro.Models.StockOrder
+namespace RestaurantRestockPro.Models.StockOrderModels
 {
     public class StockOrderDetail
     {
@@ -20,5 +20,7 @@ namespace RestaurantRestockPro.Models.StockOrder
         public DateTimeOffset? OrderUpdated { get; set; }
 
         public decimal TotalCost { get; set; }
+
+        //public virtual List<Restock> Restocks { get; set; }
     }
 }
