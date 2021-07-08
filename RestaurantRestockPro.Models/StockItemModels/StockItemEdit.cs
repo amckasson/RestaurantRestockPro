@@ -1,5 +1,4 @@
-﻿//using RestaurantRestockPro.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -21,7 +20,6 @@ namespace RestaurantRestockPro.Models.StockItemModels
         [Required]
         public ItemType ItemType { get; set; }
 
-        //public virtual List<Restock> Restocks { get; set; }
     }
 }
 
