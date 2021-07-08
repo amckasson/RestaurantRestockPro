@@ -1,5 +1,6 @@
 ﻿using RestaurantRestockPro.Data;
-using RestaurantRestockPro.Models.StockItem;
+using RestaurantRestockPro.Models.RestockModels;
+using RestaurantRestockPro.Models.StockItemModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,8 +26,10 @@ namespace RestaurantRestockPro.Services
                     Name = model.Name,
                     Price = model.Price,
                     IsFood = model.IsFood,
-                    ItemType = (int)model.ItemType
+                    ItemType = (int)model.ItemType,
+
                 };
+               
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.StockItems.Add(entity);
@@ -46,7 +49,10 @@ namespace RestaurantRestockPro.Services
                             StockItemId = e.StockItemId,
                             Name = e.Name,
                             ItemType = (ItemType)e.ItemType,
+                           
                         });
+
+                        
                 return query.ToList();
             }
         }
@@ -67,8 +73,15 @@ namespace RestaurantRestockPro.Services
                         Name = entity.Name,
                         Price = entity.Price,
                         IsFood = entity.IsFood,
-                        ItemType = (ItemType)entity.ItemType
+                        ItemType = (ItemType)entity.ItemType,
+
+                       // Restocks = entity.Restocks.Select(e => new Restock()
+                       // {
+                          //  Quantity = e.Quantity
+                       // }).ToList()
                     };
+                
+               
             }
         }
 

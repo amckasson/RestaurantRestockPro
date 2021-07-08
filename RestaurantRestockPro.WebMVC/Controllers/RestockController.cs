@@ -1,5 +1,5 @@
 ﻿using System;
-using RestaurantRestockPro.Models.Restock;
+using RestaurantRestockPro.Models.RestockModels;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;

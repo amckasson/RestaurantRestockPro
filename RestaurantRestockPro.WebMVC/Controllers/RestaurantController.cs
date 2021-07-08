@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
-using RestaurantRestockPro.Models.Restaurant;
+using RestaurantRestockPro.Models.RestaurantModels;
 using RestaurantRestockPro.Services;
 using System;
 using System.Collections.Generic;

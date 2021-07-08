@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RestaurantRestockPro.Models.StockOrder
+namespace RestaurantRestockPro.Models.StockOrderModels
 {
     public class StockOrderListItem
     {

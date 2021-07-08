@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RestaurantRestockPro.Models.Restaurant
+namespace RestaurantRestockPro.Models.RestaurantModels
 {
     public class RestaurantEdit
     {

@@ -1,6 +1,6 @@
 ﻿using RestaurantRestockPro.Data;
-using RestaurantRestockPro.Models.Restock;
-using RestaurantRestockPro.Models.StockItem;
+using RestaurantRestockPro.Models.RestockModels;
+using RestaurantRestockPro.Models.StockItemModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,7 +53,7 @@ namespace RestaurantRestockPro.Services
                                 StockItemId = e.StockItem.StockItemId
                             },
                             StockOrderId = e.StockOrderId,
-                            StockOrder = new Models.StockOrder.StockOrderListItem
+                            StockOrder = new Models.StockOrderModels.StockOrderListItem
                             {
                                 Manager = e.StockOrder.Manager,
                                 StockOrderId = e.StockOrder.StockOrderId
@@ -80,7 +80,7 @@ namespace RestaurantRestockPro.Services
                         Name = entity.StockItem.Name,
                     },
                     StockOrderId = entity.StockOrderId,
-                    StockOrder = new Models.StockOrder.StockOrderListItem
+                    StockOrder = new Models.StockOrderModels.StockOrderListItem
                     {
                         StockOrderId = entity.StockOrder.StockOrderId,
                         Manager = entity.StockOrder.Manager

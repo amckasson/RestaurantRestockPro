@@ -55,21 +55,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Restaurant\RestaurantCreate.cs" />
-    <Compile Include="Restaurant\RestaurantDetail.cs" />
-    <Compile Include="Restaurant\RestaurantEdit.cs" />
-    <Compile Include="Restaurant\RestaurantListItem.cs" />
-    <Compile Include="Restock\RestockCreate.cs" />
-    <Compile Include="Restock\RestockDetail.cs" />
-    <Compile Include="Restock\RestockListItem.cs" />
-    <Compile Include="StockItem\StockItemCreate.cs" />
-    <Compile Include="StockItem\StockItemDetail.cs" />
-    <Compile Include="StockItem\StockItemEdit.cs" />
-    <Compile Include="StockItem\StockItemListItem.cs" />
-    <Compile Include="StockOrder\StockOrderCreate.cs" />
-    <Compile Include="StockOrder\StockOrderDetail.cs" />
-    <Compile Include="StockOrder\StockOrderEdit.cs" />
-    <Compile Include="StockOrder\StockOrderListItem.cs" />
+    <Compile Include="RestaurantModels\RestaurantCreate.cs" />
+    <Compile Include="RestaurantModels\RestaurantDetail.cs" />
+    <Compile Include="RestaurantModels\RestaurantEdit.cs" />
+    <Compile Include="RestaurantModels\RestaurantListItem.cs" />
+    <Compile Include="RestockModels\RestockCreate.cs" />
+    <Compile Include="RestockModels\RestockDetail.cs" />
+    <Compile Include="RestockModels\RestockListItem.cs" />
+    <Compile Include="StockItemModels\StockItemCreate.cs" />
+    <Compile Include="StockItemModels\StockItemDetail.cs" />
+    <Compile Include="StockItemModels\StockItemEdit.cs" />
+    <Compile Include="StockItemModels\StockItemListItem.cs" />
+    <Compile Include="StockOrderModels\StockOrderCreate.cs" />
+    <Compile Include="StockOrderModels\StockOrderDetail.cs" />
+    <Compile Include="StockOrderModels\StockOrderEdit.cs" />
+    <Compile Include="StockOrderModels\StockOrderListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
