@@ -10,7 +10,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>RestaurantEdit</h4>
         <hr />
@@ -44,6 +44,16 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
+<br />
+<br />
+<br />
+<blockquote>
+    <p>
+        If anything is good for pounding humility into you permanently, it's the restaurant business.
+    </p>
+    <footer>Anthony Bourdain</footer>
+</blockquote>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
