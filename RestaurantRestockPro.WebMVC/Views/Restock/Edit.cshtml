@@ -10,7 +10,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>RestockDetail</h4>
         <hr />
@@ -40,6 +40,16 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
+<br />
+<br />
+<br />
+<blockquote>
+    <p>
+        Working in a restaurant means being part of a family, albeit usually a slightly dysfunctional one. Nothing is accomplished independently.
+    </p>
+    <footer>Joe Bastianich</footer>
+</blockquote>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
