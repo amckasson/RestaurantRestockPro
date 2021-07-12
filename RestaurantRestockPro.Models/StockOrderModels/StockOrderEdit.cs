@@ -11,5 +11,6 @@ namespace RestaurantRestockPro.Models.StockOrderModels
         public int StockOrderId { get; set; }
 
         public string Manager { get; set; }
+        public int RestaurantId { get; set; }
     }
 }

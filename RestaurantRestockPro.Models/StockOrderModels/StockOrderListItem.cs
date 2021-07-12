@@ -16,5 +16,7 @@ namespace RestaurantRestockPro.Models.StockOrderModels
         [Display(Name = "Order Created")]
         public DateTimeOffset OrderCreated { get; set; }
 
+        public int RestaurantId { get; set; }
+
     }
 }

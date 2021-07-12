@@ -24,6 +24,9 @@
             @Html.DisplayNameFor(model => model.StockOrderId)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.RestaurantId)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Manager)
         </th>
         <th>
@@ -33,22 +36,25 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.StockOrderId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Manager)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrderCreated)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new {  id=item.StockOrderId  }) |
-            @Html.ActionLink("Details", "Details", new {  id=item.StockOrderId  }) |
-            @Html.ActionLink("Delete", "Delete", new {  id=item.StockOrderId })
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.StockOrderId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.RestaurantId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Manager)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.OrderCreated)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.StockOrderId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.StockOrderId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.StockOrderId })
+    </td>
+</tr>
 }
 
 </table>

@@ -23,6 +23,7 @@ namespace RestaurantRestockPro.Services
                 new StockOrder()
                 {
                     Manager = model.Manager,
+                    RestaurantId = model.RestaurantId,
                     OrderCreated = DateTimeOffset.Now
                 };
             using (var ctx = new ApplicationDbContext())
@@ -42,6 +43,7 @@ namespace RestaurantRestockPro.Services
                         .Select(e => new StockOrderListItem()
                         {
                             StockOrderId = e.StockOrderId,
+                            RestaurantId = e.RestaurantId,
                             Manager = e.Manager,
                             OrderCreated = e.OrderCreated
                         });
@@ -62,6 +64,7 @@ namespace RestaurantRestockPro.Services
                     new StockOrderDetail()
                     {
                         StockOrderId = entity.StockOrderId,
+                        RestaurantId = entity.RestaurantId,
                         Manager = entity.Manager,
                         OrderCreated = entity.OrderCreated,
                         OrderUpdated = entity.OrderUpdated
@@ -79,6 +82,7 @@ namespace RestaurantRestockPro.Services
                         .Single(e => e.StockOrderId == model.StockOrderId);
 
                 entity.Manager = model.Manager;
+                entity.RestaurantId = model.RestaurantId;
                 entity.OrderUpdated = DateTimeOffset.UtcNow;
 
                 return ctx.SaveChanges() == 1;
