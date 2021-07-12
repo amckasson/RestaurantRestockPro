@@ -1,10 +1,22 @@
 ﻿@model IEnumerable<RestaurantRestockPro.Models.RestockModels.RestockListItem>
+<br />
+<br />
+<div class="row">
+    <div class="col-lg-12 col-lg-offset-3">
+        <img src="~/img/restockpto1.jpg" alt="..." class="img-circle">
+    </div>
+</div>
+<br />
+<br />
+<br />
+<br />
+<h2>Restock</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add More Stock", "Create")
 </p>
 
-@if (TempData.ContainsKey("SaveResult")) 
+@if (TempData.ContainsKey("SaveResult"))
 {
     <div class="alert alert-success fade in" role="alert">
         <button type="button" class="close" data-dismiss="alert">
@@ -27,23 +39,41 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.RestockId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StockOrderId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StockItemId)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new {  id=item.RestockId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.RestockId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.RestockId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RestockId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StockOrderId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StockItemId)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.RestockId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.RestockId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.RestockId })
+            </td>
+        </tr>
+    }
 
 </table>
+<br />
+<br />
+<br />
+<div class="row">
+    <div class="btn-group col-lg-offset-3">
+        <div class="col-md-12">
+            <p><a class="btn btn-danger btn-lg btn-block" href="https://localhost:44374/Restaurant">Restaurants &raquo;</a></p>
+        </div>
+        <div class="col-md-12">
+            <p><a class="btn btn-danger btn-lg btn-block" href="https://localhost:44374/StockItem">Stock Items &raquo;</a></p>
+        </div>
+        <div class="col-md-12">
+            <p><a class="btn btn-danger btn-lg btn-block" href="https://localhost:44374/StockOrder">Stock Orders &raquo;</a></p>
+        </div>
+    </div>
+</div>
+
