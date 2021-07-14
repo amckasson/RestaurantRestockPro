@@ -10,6 +10,10 @@ to continue to develop my skills using C#, HTML, CSS, and bootstrap.
 
 </hr>
 
+## Azure
+
+The web application was pushlished on Azure ----- [Azure](https://restaurantrestockprowebmvc.azurewebsites.net/)
+
 ## Installation and Downloads
 
 1. The web application was built in VS Community ----- Download [VS Community](https://visualstudio.microsoft.com/downloads/).
