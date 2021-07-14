@@ -266,6 +266,7 @@
     <Content Include="Views\Restock\Details.cshtml" />
     <Content Include="Views\Restock\Edit.cshtml" />
     <Content Include="Views\Restock\Delete.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\DateTimeOffSet.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

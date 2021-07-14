@@ -66,19 +66,33 @@
     }
 
 </table>
+
+<br />
+<br />
+<br />
+
+<div class="panel panel-warning">
+    <div class="panel-heading">
+        <h3 class="panel-title">Creators Note</h3>
+    </div>
+    <div class="panel-body">
+        Create stock items here.  This step can be done at anytime during the creation process.
+    </div>
+</div>
+
 <br />
 <br />
 <br />
 <div class="row">
-    <div class="btn-group col-lg-offset-3">
+    <div class="btn-group col-lg-offset-5">
         <div class="col-md-12">
-            <p><a class="btn btn-danger btn-lg btn-block" href="https://localhost:44374/Restaurant">Restaurants &raquo;</a></p>
+            @Html.ActionLink("Restaurants", "Index", "Restaurant")
         </div>
         <div class="col-md-12">
-            <p><a class="btn btn-danger btn-lg btn-block" href="https://localhost:44374/Restock">Restock &raquo;</a></p>
+            @Html.ActionLink("Restock", "Index", "Restock")
         </div>
         <div class="col-md-12">
-            <p><a class="btn btn-danger btn-lg btn-block" href="https://localhost:44374/StockOrder">Stock Orders &raquo;</a></p>
+            @Html.ActionLink("Stock Orders", "Index", "StockOrder")
         </div>
     </div>
 </div>

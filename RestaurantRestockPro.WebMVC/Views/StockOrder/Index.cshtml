@@ -70,19 +70,33 @@
     }
 
 </table>
+
+<br />
+<br />
+<br />
+
+<div class="panel panel-warning">
+    <div class="panel-heading">
+        <h3 class="panel-title">Creators Note</h3>
+    </div>
+    <div class="panel-body">
+        Step Two: Here you will want to use your Restaurant ID to tie the stock order to a restaurant.  The employee or manager will also be told to enter there name.
+    </div>
+</div>
+
 <br />
 <br />
 <br />
 <div class="row">
-    <div class="btn-group col-lg-offset-3">
+    <div class="btn-group col-lg-offset-5">
         <div class="col-md-12">
-            <p><a class="btn btn-danger btn-lg btn-block" href="https://localhost:44374/Restaurant">Restaurants &raquo;</a></p>
+            @Html.ActionLink("Restaurants", "Index", "Restaurant")
         </div>
         <div class="col-md-12">
-            <p><a class="btn btn-danger btn-lg btn-block" href="https://localhost:44374/Restock">Restock &raquo;</a></p>
+            @Html.ActionLink("Restock", "Index", "Restock")
         </div>
         <div class="col-md-12">
-            <p><a class="btn btn-danger btn-lg btn-block" href="https://localhost:44374/StockItem">Stock Items &raquo;</a></p>
+            @Html.ActionLink("Stock Items", "Index", "StockItem")
         </div>
     </div>
 </div>

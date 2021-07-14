@@ -60,19 +60,33 @@
     }
 
 </table>
+
+<br />
+<br />
+<br />
+
+<div class="panel panel-warning">
+    <div class="panel-heading">
+        <h3 class="panel-title">Creators Note</h3>
+    </div>
+    <div class="panel-body">
+        Last Step: Add your Restock quantities here.  This should be the last step that you do.  You will need both a Stock Order ID and Stock Item ID to complete this step.
+    </div>
+</div>
+
 <br />
 <br />
 <br />
 <div class="row">
-    <div class="btn-group col-lg-offset-3">
+    <div class="btn-group col-lg-offset-5">
         <div class="col-md-12">
-            <p><a class="btn btn-danger btn-lg btn-block" href="https://localhost:44374/Restaurant">Restaurants &raquo;</a></p>
+            @Html.ActionLink("Restaurants", "Index", "Restaurant")
         </div>
         <div class="col-md-12">
-            <p><a class="btn btn-danger btn-lg btn-block" href="https://localhost:44374/StockItem">Stock Items &raquo;</a></p>
+            @Html.ActionLink("Stock Items", "Index", "StockItem")
         </div>
         <div class="col-md-12">
-            <p><a class="btn btn-danger btn-lg btn-block" href="https://localhost:44374/StockOrder">Stock Orders &raquo;</a></p>
+            @Html.ActionLink("Stock Orders", "Index", "StockOrder")
         </div>
     </div>
 </div>
