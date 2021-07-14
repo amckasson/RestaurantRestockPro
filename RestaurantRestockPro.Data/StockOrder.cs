@@ -22,6 +22,9 @@ namespace RestaurantRestockPro.Data
 
         public decimal TotalCost { get; set; }
 
-        public virtual List<Restock> Restocks { get; set; } 
+        public virtual List<Restock> Restocks { get; set; }
+
+        public int RestaurantId { get; set; }
+        public virtual List<Restaurant> Restaurants { get; set; }
     }
 }

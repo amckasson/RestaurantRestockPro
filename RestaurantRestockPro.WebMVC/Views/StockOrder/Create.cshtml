@@ -4,15 +4,15 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>Create a Stock Order</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>StockOrderCreate</h4>
+        <h4></h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -20,6 +20,14 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Manager, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Manager, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RestaurantId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.RestaurantId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.RestaurantId, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -32,8 +40,18 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to Stock Orders", "Index")
 </div>
+
+<br />
+<br />
+<br />
+<blockquote>
+    <p>
+        The way you make an omelet reveals your character.
+    </p>
+    <footer>Anthony Bourdain</footer>
+</blockquote>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

@@ -4,24 +4,32 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<h2>Update a Stock Order</h2>
 
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>StockOrderEdit</h4>
+        <h4></h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-       @Html.HiddenFor(model => model.StockOrderId)
+        @Html.HiddenFor(model => model.StockOrderId)
 
         <div class="form-group">
             @Html.LabelFor(model => model.Manager, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Manager, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Manager, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RestaurantId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.RestaurantId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.RestaurantId, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -34,8 +42,18 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to Stock Orders", "Index")
 </div>
+
+<br />
+<br />
+<br />
+<blockquote>
+    <p>
+        In cooking you've got to have a what-the-hell attitude.
+    </p>
+    <footer>Julia Child</footer>
+</blockquote>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

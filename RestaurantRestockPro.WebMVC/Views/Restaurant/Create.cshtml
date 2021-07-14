@@ -4,7 +4,7 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>Add a Restaurant</h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,7 +12,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>RestaurantCreate</h4>
+        <h4></h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -40,8 +40,16 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to Restaurants", "Index")
 </div>
+<br />
+<br />
+<blockquote>
+    <p>
+        A good restaurant is like a vacation; it transports you, and it becomes a lot more than just about the food.
+    </p>
+    <footer>Philip Rosenthal</footer>
+</blockquote>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

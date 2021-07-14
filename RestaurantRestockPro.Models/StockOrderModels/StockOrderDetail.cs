@@ -21,6 +21,8 @@ namespace RestaurantRestockPro.Models.StockOrderModels
 
         public decimal TotalCost { get; set; }
 
+        public int RestaurantId { get; set; }
+
         //public virtual List<Restock> Restocks { get; set; }
     }
 }

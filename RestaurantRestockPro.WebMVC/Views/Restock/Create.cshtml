@@ -4,15 +4,15 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>Restock Items</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>RestockCreate</h4>
+        <h4></h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -50,6 +50,16 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
+<br />
+<br />
+<br />
+<blockquote>
+    <p>
+        No rules. Don't be afraid to do whatever you want. Cooking doesn't have to have rules. I don't like it that way.
+    </p>
+    <footer>Masaharu Morimoto</footer>
+</blockquote>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

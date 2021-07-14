@@ -71,6 +71,10 @@
     <Compile Include="Migrations\202107061915153_third migration.Designer.cs">
       <DependentUpon>202107061915153_third migration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107121616153_stockOrderMigration.cs" />
+    <Compile Include="Migrations\202107121616153_stockOrderMigration.Designer.cs">
+      <DependentUpon>202107121616153_stockOrderMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Restaurant.cs" />
@@ -94,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107061915153_third migration.resx">
       <DependentUpon>202107061915153_third migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107121616153_stockOrderMigration.resx">
+      <DependentUpon>202107121616153_stockOrderMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
