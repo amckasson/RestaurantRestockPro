@@ -10,9 +10,13 @@ to continue to develop my skills using C#, HTML, CSS, and bootstrap.
 
 </hr>
 
-## Installation
+## Installation and Downloads
 
 1. The web application was built in VS Community ----- Download [VS Community](https://visualstudio.microsoft.com/downloads/).
+
+2. I used images from unsplash a site that provides free images ----- [Unsplash](https://unsplash.com/) 
+
+3. I used a bootstrap theme from bootswatch ----- [Bootswatch](https://bootswatch.com/)
 
 ## Correct Order of Creation
 
